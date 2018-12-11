@@ -149,7 +149,8 @@ static void lpc_start(void) {
 
 static void lpc_send_addr(uint32_t addr) {
 	addr |= 0xFF000000;
-	for (int i=4; i <= sizeof(addr)*8; i+=4){
+	int i;
+	for (=4; i <= sizeof(addr)*8; i+=4){
 		lpc_nibble_write((uint8_t)(addr >> (32-i)));
 	}
 }
